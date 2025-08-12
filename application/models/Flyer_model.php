@@ -6,8 +6,12 @@ class Flyer_model extends CI_Model {
 
     private $table = 'flyer';
 
-    public function get_all() {
-        return $this->db->get($this->table)->result();
+    public function get_all_flyer()
+    {
+    $this->db->select('flyer.*, kategori.nama_kategori');
+    $this->db->from('flyer');
+    $this->db->join('kategori', 'kategori.id_kategori = flyer.id_kategori');
+        return $this->db->get()->result();
     }
 
     public function get_by_id($id) {

@@ -35,7 +35,7 @@
                         <tr>
                             <td><?= $no++; ?></td>
                             <td><?= $f->nama_flyer; ?></td>
-                            <td><?= $f->id_kategori; ?></td>
+                            <td><?= $f->nama_kategori; ?></td>
                             <td>
                                 <?php if (!empty($f->gambar)): ?>
                                     <img src="<?= base_url('uploads/flyer/' . $f->gambar); ?>" width="80">

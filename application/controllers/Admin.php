@@ -24,8 +24,8 @@ class Admin extends CI_Controller {
     // List flyer
     public function index()
     {
-        $data['flyers'] = $this->Flyer_model->get_all();
-        $this->load->view('admin/flyer/index', $data);
+    $data['flyers'] = $this->Flyer_model->get_all_flyer();
+    $this->load->view('admin/flyer/index', $data);
     }
 
     // Tambah flyer
