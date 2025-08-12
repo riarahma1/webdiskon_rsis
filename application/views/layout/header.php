@@ -16,7 +16,18 @@
 <body>
 
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
+</nav>
+
+<div class="container mt-3">
+    <!-- Tombol Kembali -->
+    <a href="javascript:history.back()" class="btn btn-outline-primary mb-3">
+        ← Kembali
+    </a>
+
+    <!-- Konten Halaman -->
+    <?php if (isset($contents)) echo $contents; ?>
+</div>
+
    <a class="navbar-brand" href="<?php echo base_url('dashboard'); ?>">Admin Panel</a>
    <ul class="navbar-nav ms-auto">
     <li class="nav-item"><a class="nav-link" href="<?php echo base_url('kategori'); ?>">Kategori</a></li>

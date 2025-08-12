@@ -11,7 +11,7 @@ class Flyer_model extends CI_Model {
     }
 
     public function get_by_id($id) {
-        return $this->db->get_where($this->table, ['id' => $id])->row();
+        return $this->db->get_where($this->table, ['id_flyer' => $id])->row();
     }
 
     public function insert($data) {
@@ -19,11 +19,11 @@ class Flyer_model extends CI_Model {
     }
 
     public function update($id, $data) {
-        return $this->db->where('id', $id)->update($this->table, $data);
+        return $this->db->where('id_flyer', $id)->update($this->table, $data);
     }
 
     public function delete($id) {
-        return $this->db->delete($this->table, ['id' => $id]);
+        return $this->db->delete($this->table, ['id_flyer' => $id]);
     }
 
     public function count_all() {

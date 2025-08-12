@@ -10,12 +10,13 @@
  <div class="container">
   <h2>Edit Flyer</h2>
   <a href="<?= site_url('admin'); ?>" class="btn btn-secondary mb-3">Kembali</a>
+  <a href="<?= site_url('admin/edit/'.$flyer->id_flyer) ?>">Edit</a>
 
   <?php if ($this->session->flashdata('error')): ?>
   <div class="alert alert-danger"><?= $this->session->flashdata('error'); ?></div>
   <?php endif; ?>
 
-  <?= form_open_multipart('admin/edit/' . $flyer->id); ?>
+  <?= form_open_multipart('admin/edit/' . $flyer->id_flyer); ?>
   <div class="form-group mb-2">
    <label>Nama Flyer</label>
    <input type="text" name="nama_flyer" class="form-control" value="<?= $flyer->nama_flyer; ?>" required>
@@ -23,10 +24,10 @@
 
   <div class="form-group mb-2">
    <label>Kategori</label>
-   <select name="kategori_id" class="form-control" required>
+   <select name="id_kategori" class="form-control" required>
     <option value="">-- Pilih Kategori --</option>
     <?php foreach ($kategori as $k): ?>
-    <option value="<?= $k->id; ?>" <?= ($flyer->kategori_id == $k->id) ? 'selected' : ''; ?>>
+    <option value="<?= $k->id_kategori; ?>" <?= ($flyer->id_kategori == $k->id_kategori) ? 'selected' : ''; ?>>
      <?= $k->nama_kategori; ?>
     </option>
     <?php endforeach; ?>
@@ -42,13 +43,13 @@
   </div>
 
   <div class="form-group mb-2">
-   <label>Tanggal Mulai</label>
-   <input type="date" name="tanggal_mulai" class="form-control" value="<?= $flyer->tanggal_mulai; ?>" required>
+   <label>tgl_mulai</label>
+   <input type="date" name="tgl_mulai" class="form-control" value="<?= $flyer->tgl_mulai; ?>" required>
   </div>
 
   <div class="form-group mb-2">
-   <label>Tanggal Akhir</label>
-   <input type="date" name="tanggal_akhir" class="form-control" value="<?= $flyer->tanggal_akhir; ?>" required>
+   <label>tgl_selesai</label>
+   <input type="date" name="tgl_selesai" class="form-control" value="<?= $flyer->tgl_selesai; ?>" required>
   </div>
 
   <div class="form-group mb-3">
@@ -62,6 +63,7 @@
   <button type="submit" class="btn btn-success">Update</button>
   <?= form_close(); ?>
  </div>
+ 
 </body>
 
 </html>

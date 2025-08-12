@@ -37,13 +37,13 @@
   </div>
 
   <div class="form-group mb-2">
-   <label>Tanggal Mulai</label>
-   <input type="date" name="tanggal_mulai" class="form-control" required>
+   <label>tgl_mulai</label>
+   <input type="date" name="tgl_mulai" class="form-control" required>
   </div>
 
   <div class="form-group mb-2">
-   <label>Tanggal Akhir</label>
-   <input type="date" name="tanggal_selesai" class="form-control" required>
+   <label>tgl_selesai</label>
+   <input type="date" name="tgl_selesai" class="form-control" required>
   </div>
 
   <div class="form-group mb-3">

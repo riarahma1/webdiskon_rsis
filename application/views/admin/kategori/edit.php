@@ -10,7 +10,7 @@
 
 <h1>Halaman Kategori</h1>
 <!-- isi konten halaman -->
-
+<a href="<?php echo site_url('kategori'); ?>" style="text-decoration:none;"> Kembali</a>
 <?php $this->load->view('layout/footer'); ?>
 
 <body>

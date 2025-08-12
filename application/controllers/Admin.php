@@ -54,8 +54,8 @@ class Admin extends CI_Controller {
                 'nama_flyer'   => $this->input->post('nama_flyer'),
                 'id_kategori'  => $this->input->post('id_kategori'),
                 'gambar'       => $upload_data ? $upload_data['file_name'] : null,
-                'tgl_mulai'=> $this->input->post('tanggal_mulai'),
-                'tgl_selesai'=> $this->input->post('tanggal_selesai'),
+                'tgl_mulai'=> $this->input->post('tgl_mulai'),
+                'tgl_selesai'=> $this->input->post('tgl_selesai'),
                 'status'       => $this->input->post('status')
             ];
 
@@ -100,7 +100,7 @@ class Admin extends CI_Controller {
             $update_data = [
                 'nama_flyer'   => $this->input->post('nama_flyer'),
                 'id_kategori'  => $this->input->post('id_kategori'),
-                'tgl_mulai'=> $this->input->post('tanggal_mulai'),
+                'tgl_mulai'=> $this->input->post('tgl_mulai'),
                 'tgl_selesai'=> $this->input->post('tanggal_selesai'),
                 'status'       => $this->input->post('status')
             ];

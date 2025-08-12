@@ -9,6 +9,7 @@
 <body class="p-4">
     <div class="container">
         <h2>Data Flyer</h2>
+        <a href="<?php echo site_url('admin/dashboard'); ?>" style="text-decoration:none;"> Kembali</a>
         <a href="<?= site_url('admin/tambah'); ?>" class="btn btn-primary mb-3">+ Tambah Flyer</a>
 
         <?php if ($this->session->flashdata('error')): ?>
@@ -46,8 +47,8 @@
                             <td><?= $f->tgl_selesai; ?></td>
                             <td><?= $f->status; ?></td>
                             <td>
-                                <a href="<?= base_url('admin/edit/'.$f->id_flyer) ?>" class="btn btn-warning btn-sm">Edit</a>
-                                <a href="<?= base_url('admin/hapus/'.$f->id_flyer) ?>" onclick="return confirm('Yakin hapus?');" class="btn btn-danger btn-sm">Hapus</a>
+                                <a href="<?= base_url('index.php/admin/edit/'.$f->id_flyer) ?>" class="btn btn-warning btn-sm">Edit</a>
+                                <a href="<?= base_url('index.php/admin/hapus/'.$f->id_flyer) ?>" onclick="return confirm('Yakin hapus?');" class="btn btn-danger btn-sm">Hapus</a>
                             </td>
                         </tr>
                     <?php endforeach; ?>

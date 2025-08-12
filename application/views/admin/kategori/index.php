@@ -8,7 +8,7 @@
 
 <body>
  <h1>Data Kategori</h1>
-
+<a href="<?php echo site_url('admin/dashboard'); ?>" style="text-decoration:none;"> Kembali</a>
  <a href="<?= site_url('kategori/tambah') ?>">+ Tambah Kategori</a>
  <br><br>
 
