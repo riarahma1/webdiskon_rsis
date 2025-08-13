@@ -22,7 +22,9 @@ class Kategori extends CI_Controller {
     {
         if ($this->input->post()) {
             $data = [
-                'nama_kategori' => $this->input->post('nama_kategori')
+                'nama_kategori' => $this->input->post('nama_kategori'),
+                'nomor_urut' => $this->input->post('nomor_urut'),
+                'status'       => $this->input->post('status')
             ];
             $this->Kategori_model->insert($data);
             redirect('kategori');
@@ -41,7 +43,9 @@ class Kategori extends CI_Controller {
 
         if ($this->input->post()) {
             $update_data = [
-                'nama_kategori' => $this->input->post('nama_kategori')
+                'nama_kategori' => $this->input->post('nama_kategori'),
+                'nomor_urut' => $this->input->post('nomor_urut'),
+                'status'       => $this->input->post('status')
             ];
             $this->Kategori_model->update($id, $update_data);
             redirect('kategori');
@@ -53,6 +57,16 @@ class Kategori extends CI_Controller {
     // Hapus kategori
     public function hapus($id)
     {
+        $this->load->database();
+        $cek_flyer = $this->db->get_where('flyer', ['id_kategori' => $id])->num_rows();
+
+        if ($cek_flyer > 0) {
+            echo "<script>
+                    alert('Kategori tidak bisa dihapus karena masih dipakai di data flyer!');
+                    window.location.href = '" . site_url('kategori') . "';
+                </script>";
+            return;
+        }
         $this->Kategori_model->delete($id);
         redirect('kategori');
     }

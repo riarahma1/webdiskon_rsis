@@ -2,13 +2,19 @@
 <html>
 
 <head>
-    <title>Data Flyer</title>
+    <title>Kelola Promo dan Diskon</title>
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css'); ?>">
 </head>
 
 <body class="p-4">
+    <div class="sidebar">
+    <ul>
+        <li><a href="<?= site_url('kategori'); ?>">Kategori</a></li>
+        <li><a href="<?= site_url('admin'); ?>" class="active">Promo</a></li>
+    </ul>
+    </div>
     <div class="container">
-        <h2>Data Flyer</h2>
+        <h2>Kelola Promo dan Diskon</h2>
         <a href="<?php echo site_url('admin/dashboard'); ?>" style="text-decoration:none;"> Kembali</a>
         <a href="<?= site_url('admin/tambah'); ?>" class="btn btn-primary mb-3">+ Tambah Flyer</a>
 
@@ -20,12 +26,12 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama Flyer</th>
+                    <th>Judul Promo</th>
                     <th>Kategori</th>
-                    <th>Gambar</th>
                     <th>Tanggal Mulai</th>
                     <th>Tanggal Akhir</th>
                     <th>Status</th>
+                    <th>Flayer</th>
                     <th width="150">Aksi</th>
                 </tr>
             </thead>
